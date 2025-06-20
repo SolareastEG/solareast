@@ -13,7 +13,6 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            /* Changed to white background and darker text for light mode */
             background-color: #ffffff; /* White background */
             color: #1f2937; /* Dark gray text */
         }
@@ -33,8 +32,50 @@
         }
         /* Ensure the logo image is responsive */
         .header-logo {
-            max-height: 40px; /* Adjust as needed */
+            max-height: 60px; /* Increased size */
             width: auto;
+            /* No drop-shadow needed for transparent PNG */
+        }
+
+        /* Styles for the repeating background text in the hero section */
+        .hero-background-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Hide overflow of text */
+            z-index: 0; /* Ensure it's behind other content but above the overlay */
+            color: rgba(0, 0, 139, 0.25); /* Faint dark blue with further increased opacity for more contrast */
+            font-size: 8rem; /* Very large font size for the repeating text */
+            line-height: 0.8; /* Adjust line height to pack text closely */
+            font-weight: 700; /* Bold text */
+            pointer-events: none; /* Allow clicks to pass through */
+            white-space: pre-wrap; /* Preserve whitespace and wrap text */
+            word-break: break-all; /* Break long words */
+            text-align: justify; /* Justify text to fill space */
+            padding: 20px; /* Add some padding so text doesn't touch edges */
+            display: flex; /* Use flexbox for centering content if needed */
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+        }
+
+        /* Responsive adjustments for the hero-background-text font size */
+        @media (max-width: 768px) {
+            .hero-background-text {
+                font-size: 3rem; /* Smaller font for mobile */
+                line-height: 1;
+            }
+        }
+        @media (max-width: 480px) { /* Even smaller for very small mobile screens */
+            .hero-background-text {
+                font-size: 2rem;
+            }
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .hero-background-text {
+                font-size: 5rem; /* Medium font for tablets */
+            }
         }
     </style>
 </head>
@@ -45,8 +86,8 @@
         <div class="container mx-auto flex justify-between items-center px-4 md:px-8">
             <!-- Logo -->
             <a href="#" class="block">
-                <!-- Using the provided Google Drive direct link for the logo -->
-                <img src="https://lh3.googleusercontent.com/d/1mJSZe44TUBFJUGewaVr8r-Y8aT-RELjC" alt="Solareast EG Logo" class="header-logo">
+                <!-- Updated with the new ImgBB direct image URL -->
+                <img src="https://i.ibb.co/DfJwygf7/images-removebg-preview.png" alt="Solareast EG Logo" class="header-logo">
             </a>
 
             <!-- Navigation -->
@@ -62,54 +103,96 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="home" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/cfe2f3/1e3a8a?text=Solar+Energy+Background');">
-            <div class="absolute inset-0 bg-blue-900 opacity-30"></div>
-            <div class="relative z-10 p-6 max-w-3xl mx-auto">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6 animate-pulse">
-                    Powering Tomorrow's Vision Today.
+        <!-- Hero Section (Home) -->
+        <section id="home" class="relative h-screen flex items-center justify-center text-center bg-gray-900 pt-16">
+            <!-- Repeating Background Text -->
+            <div class="hero-background-text">
+                <!-- Repeating "Tomorrow's Vision" text to create a wall of text effect -->
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+                Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision Tomorrow's Vision<br>
+            </div>
+
+            <!-- Content for Home Section -->
+            <div class="relative z-10 py-6 px-8 bg-black bg-opacity-60 rounded-xl shadow-2xl mx-4 md:mx-auto w-full max-w-lg md:max-w-xl lg:max-w-2xl max-h-[75vh] overflow-hidden scroll-reveal">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+                    Solareast EG: Powering Tomorrow with Renewable Energy
                 </h1>
-                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                    Solareast EG provides sustainable energy solutions for a brighter, greener future.
+                <p class="text-lg md:text-xl text-gray-200 mb-6">
+                    Committed to a sustainable future, we deliver cutting-edge solar energy solutions tailored for Egypt.
+                    Join us in illuminating homes and businesses with clean, efficient power.
                 </p>
-                <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                    Explore Our Solutions
-                </a>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                        Explore Products
+                    </a>
+                    <a href="#contact" class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                        Contact Information
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- Products Section -->
-        <section id="products" class="py-20 bg-white px-4 md:px-8">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 scroll-reveal">Our Sustainable Solutions</h2>
+        <section id="products" class="py-16 md:py-24 bg-gray-50 scroll-reveal">
+            <div class="container mx-auto px-4 md:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">Our Sustainable Products</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <!-- Product Card 1: On-Grid Station -->
-                    <div class="bg-gray-50 rounded-xl shadow-xl overflow-hidden scroll-reveal transform hover:scale-105 transition duration-300 border border-gray-200">
-                        <img src="https://placehold.co/600x400/add8e6/0a3d62?text=On-Grid+Station" alt="Solareast EG On-Grid Station" class="w-full h-64 object-cover">
+                    <!-- Product Card 1: OnGrid Systems -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 border border-gray-200">
+                        <img src="https://placehold.co/400x250/A3B8CC/000?text=OnGrid+Systems" alt="OnGrid Systems" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-gray-900 mb-2">On-Grid Station (Residential)</h3>
-                            <p class="text-gray-600 mb-4">Seamlessly integrate solar power with your existing electricity grid for residential use.</p>
-                            <!-- Price tag removed -->
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-3">OnGrid Systems</h3>
+                            <p class="text-gray-700 text-base mb-4">
+                                Seamlessly integrate with the existing utility grid, allowing you to generate your own electricity while maintaining a connection for backup power and selling excess energy.
+                            </p>
+                            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition duration-300">Learn More</a>
                         </div>
                     </div>
 
-                    <!-- Product Card 2: Off-Grid Station -->
-                    <div class="bg-gray-50 rounded-xl shadow-xl overflow-hidden scroll-reveal transform hover:scale-105 transition duration-300 border border-gray-200">
-                        <img src="https://placehold.co/600x400/98fb98/0a3d62?text=Off-Grid+Station" alt="Solareast EG Off-Grid Station" class="w-full h-64 object-cover">
+                    <!-- Product Card 2: OffGrid Systems -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 border border-gray-200">
+                        <img src="https://placehold.co/400x250/C8A2C8/000?text=OffGrid+Systems" alt="OffGrid Systems" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Off-Grid Station (Commercial)</h3>
-                            <p class="text-gray-600 mb-4">Independent power solutions for commercial enterprises, ideal for remote locations.</p>
-                            <!-- Price tag removed -->
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-3">OffGrid Systems</h3>
+                            <p class="text-gray-700 text-base mb-4">
+                                Achieve complete energy independence with our robust off-grid solutions, ideal for remote locations or those seeking freedom from utility reliance. Includes battery storage.
+                            </p>
+                            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition duration-300">Learn More</a>
                         </div>
                     </div>
 
-                    <!-- Product Card 3: Pumping Station -->
-                    <div class="bg-gray-50 rounded-xl shadow-xl overflow-hidden scroll-reveal transform hover:scale-105 transition duration-300 border border-gray-200">
-                        <img src="https://placehold.co/600x400/87ceeb/0a3d62?text=Pumping+Station" alt="Solareast EG Solar Pumping Station" class="w-full h-64 object-cover">
+                    <!-- Product Card 3: Water Pumping Systems -->
+                    <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 border border-gray-200">
+                        <img src="https://placehold.co/400x250/AED6F1/000?text=Water+Pumping" alt="Water Pumping Systems" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-2xl font-semibold text-gray-900 mb-2">Solar Pumping Station (Agricultural)</h3>
-                            <p class="text-gray-600 mb-4">Efficient solar-powered water pumping solutions for agricultural and irrigation needs.</p>
-                            <!-- Price tag removed -->
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-3">Water Pumping Systems</h3>
+                            <p class="text-gray-700 text-base mb-4">
+                                Efficient and sustainable solar-powered water pumping solutions for agriculture, livestock, and remote water supply, reducing operational costs and environmental impact.
+                            </p>
+                            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-full transition duration-300">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -117,163 +200,153 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-20 bg-gray-100 px-4 md:px-8">
-            <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-bold text-blue-700 mb-8 scroll-reveal">Our Commitment to a Sustainable Future</h2>
-                <p class="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto scroll-reveal">
-                    At Solareast EG, we are dedicated to pioneering sustainable energy solutions that empower communities and protect our planet. We provide cutting-edge solar panels, efficient inverters, and reliable battery storage systems, all designed to deliver clean, renewable energy. Our mission is to make green energy accessible and reliable, contributing to a brighter, more sustainable tomorrow for everyone.
-                </p>
+        <section id="about" class="py-16 md:py-24 bg-white scroll-reveal">
+            <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Solareast EG</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        Solareast EG is a leading provider of comprehensive solar energy solutions in Egypt.
+                        With a commitment to sustainability and innovation, we specialize in designing,
+                        installing, and maintaining high-quality solar power systems for residential,
+                        commercial, and industrial clients.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        Our mission is to accelerate the adoption of renewable energy, reduce carbon footprints,
+                        and empower communities with clean, affordable, and reliable electricity. We pride ourselves
+                        on our expert team, superior technology, and unwavering dedication to customer satisfaction.
+                    </p>
+                    <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                        Contact Us
+                    </a>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://placehold.co/500x350/D2E3F8/000?text=Our+Team" alt="About Us Image" class="rounded-xl shadow-2xl max-w-full h-auto">
+                </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-white px-4 md:px-8">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 scroll-reveal">Get in Touch</h2>
-                <div class="max-w-md mx-auto bg-gray-100 rounded-xl shadow-xl p-8 scroll-reveal border border-gray-200">
-                    <form id="contactForm" class="space-y-6">
+        <section id="contact" class="py-16 md:py-24 bg-gray-50 scroll-reveal">
+            <div class="container mx-auto px-4 md:px-8 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">Get in Touch</h2>
+                <div class="max-w-3xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-xl border border-gray-200">
+                    <p class="text-lg text-gray-700 mb-8">
+                        For inquiries or assistance, please contact us directly.
+                    </p>
+                    <div class="mb-6">
+                        <label for="phoneNumber" class="block text-left text-gray-700 font-medium mb-2">Phone Number:</label>
+                        <p id="phoneNumber" class="text-xl text-gray-900 font-semibold">+201115556064</p>
+                    </div>
+                    <form class="space-y-6">
                         <div>
-                            <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name" required>
+                            <label for="name" class="block text-left text-gray-700 font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
                         </div>
                         <div>
-                            <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your.email@example.com" required>
+                            <label for="email" class="block text-left text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@example.com"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300">
                         </div>
                         <div>
-                            <label for="message" class="block text-gray-700 text-sm font-medium mb-2">Message</label>
-                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg bg-white text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your message..." required></textarea>
+                            <label for="message" class="block text-left text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message"
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg shadow-md transition duration-300 transform hover:scale-105">
+                        <button type="submit"
+                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-10 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
                             Send Message
                         </button>
                     </form>
-                    <div id="formMessage" class="mt-4 text-center text-sm font-medium hidden"></div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer Section -->
-    <footer class="bg-gray-100 py-8 text-center text-gray-600">
-        <div class="container mx-auto px-4 md:px-8">
-            <p>&copy; 2025 Solareast EG. All rights reserved.</p>
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <p>&copy; 2023 Solareast EG. All rights reserved.</p>
             <div class="flex justify-center space-x-6 mt-4">
-                <a href="#" class="hover:text-blue-700 transition duration-300">Privacy Policy</a>
-                <a href="#" class="hover:text-blue-700 transition duration-300">Terms of Service</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Privacy Policy</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Terms of Service</a>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTopBtn" class="fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition duration-300 transform hover:scale-110 z-40">
-        <!-- SVG for an upward arrow icon -->
+    <!-- Scroll-to-top button -->
+    <button id="scrollToTopBtn"
+        class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 focus:outline-none z-40">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
     </button>
 
     <script>
-        // JavaScript for smooth scrolling, scroll reveal, back-to-top button, and form handling
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Smooth Scrolling for Navigation Links
-            document.querySelectorAll('nav a').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault(); // Prevent default anchor behavior
-
-                    const targetId = this.getAttribute('href'); // Get the href (e.g., "#products")
-                    // Check if the target is a full URL or an ID, then scroll
-                    if (targetId.startsWith('#')) {
-                        const targetElement = document.querySelector(targetId);
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Prevent default behavior only if href is a hash link
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    // If href is just '#', scroll to the top of the page
+                    if (href === '#') {
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    } else {
+                        // Otherwise, scroll to the element specified by the hash
+                        const targetElement = document.querySelector(href);
                         if (targetElement) {
                             targetElement.scrollIntoView({
-                                behavior: 'smooth' // Smooth scroll effect
+                                behavior: 'smooth'
                             });
                         }
-                    } else {
-                        // For external links or other non-ID links, allow default behavior
-                        window.location.href = targetId;
                     }
-                });
-            });
-
-            // 2. Scroll-to-Top Button Functionality
-            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-
-            // Show/hide button based on scroll position
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) { // Show button after scrolling down 300px
-                    scrollToTopBtn.style.display = 'block';
-                } else {
-                    scrollToTopBtn.style.display = 'none';
                 }
             });
+        });
 
-            // Scroll to top when button is clicked
-            scrollToTopBtn.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth' // Smooth scroll to top
-                });
+        // Scroll-to-top button functionality
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
             });
+        });
 
-            // 3. Scroll Reveal Animation for Sections
-            const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+        // Scroll reveal effect for sections
+        const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
 
-            // Options for the Intersection Observer
-            const observerOptions = {
-                root: null, // viewport as root
-                rootMargin: '0px',
-                threshold: 0.1 // 10% of element visible to trigger
-            };
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-            // Callback function for when elements intersect
-            const observerCallback = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active'); // Add 'active' class to reveal
-                        observer.unobserve(entry.target); // Stop observing once revealed
-                    }
-                });
-            };
-
-            // Create a new Intersection Observer
-            const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-            // Observe each element with the 'scroll-reveal' class
-            scrollRevealElements.forEach(el => {
-                observer.observe(el);
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active'); // Optional: remove 'active' when out of view
+                }
             });
+        }, observerOptions);
 
-            // 4. Basic Contact Form Handling
-            const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('formMessage');
-
-            contactForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Prevent default form submission
-
-                // Get form data
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-
-                console.log('Form Submitted!');
-                console.log('Name:', name);
-                console.log('Email:', email);
-                console.log('Message:', message);
-
-                // Display a success message
-                formMessage.textContent = 'Thank you for your message! We will get back to you soon.';
-                formMessage.classList.remove('hidden');
-                formMessage.classList.add('text-green-600'); // Changed success color for light mode
-
-                // Clear the form fields after a short delay
-                setTimeout(() => {
-                    contactForm.reset();
-                    formMessage.classList.add('hidden'); // Hide message after a while
-                }, 3000); // Hide message after 3 seconds
-            });
+        scrollRevealElements.forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
